@@ -1,0 +1,15 @@
+# Perfil MySQL. As credenciais vêm de variáveis de ambiente; nada de senha no código.
+#   DB_URL      ex.: jdbc:mysql://localhost:3306/gestao_compras?createDatabaseIfNotExist=true
+#   DB_USER
+#   DB_PASSWORD
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: false

@@ -1,0 +1,23 @@
+# Padrão: banco H2 em memória, para rodar sem instalar nada.
+# Para usar MySQL, suba com o perfil "mysql" (veja application-mysql.yml).
+spring:
+  application:
+    name: gestao-compras
+  datasource:
+    url: jdbc:h2:mem:compras;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+server:
+  port: 8080
+
+app:
+  dados-de-exemplo: true
